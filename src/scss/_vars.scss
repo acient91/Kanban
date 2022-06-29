@@ -1,0 +1,25 @@
+$bg: #F2F5FA;
+$text: #333333;
+$orange: #FF5722;
+$green: #8BC34A;
+$blue: #4F6EA3;
+
+
+
+%Regular {
+  font-family: 'OpenSans-Regular',
+    sans-serif;
+  font-weight: 400;
+}
+
+%SemiBold {
+  font-family: 'OpenSans-SemiBold',
+    sans-serif;
+  font-weight: 600;
+}
+
+%Bold {
+  font-family: 'OpenSans-Bold',
+    sans-serif;
+  font-weight: 700;
+}

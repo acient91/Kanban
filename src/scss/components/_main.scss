@@ -1,0 +1,676 @@
+.main {
+  background-color: $bg;
+}
+
+.checked {
+  opacity: 0.5;
+}
+
+.aside {
+  padding-top: 18px;
+  width: 290px;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    margin-bottom: 20px;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 20px;
+    height: 14px;
+
+    span {
+      width: 20px;
+      height: 2px;
+      background-color: #B7B9BB;
+    }
+  }
+
+  &__links {
+    padding: 0 15px;
+    margin-bottom: 20px;
+  }
+
+  &__link {
+    display: block;
+    padding: 12px 0 14px 30px;
+    @extend %SemiBold;
+    font-size: 14px;
+    line-height: 19px;
+    color: $text;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 10px;
+      left: 0;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    &:nth-child(1) {
+      &::before {
+        width: 20px;
+        height: 20px;
+        background-image: url('../img/home.svg');
+      }
+    }
+
+    &:nth-child(2) {
+      &::before {
+        width: 18px;
+        height: 18px;
+        background-image: url('../img/time.svg');
+      }
+    }
+
+    &:nth-child(3) {
+      &::before {
+        width: 18px;
+        height: 18px;
+        background-image: url('../img/projects.svg');
+      }
+    }
+  }
+
+  &__favorites {
+    margin-bottom: 20px;
+  }
+
+  &__favorites-text,
+  &__teams-text {
+    @extend %Bold;
+    font-size: 12px;
+    line-height: 16px;
+    color: #B7B9BB;
+    display: block;
+    margin-bottom: 5px;
+    padding-left: 15px;
+  }
+
+  &__list-link,
+  &__teams-link {
+    @extend %SemiBold;
+    font-size: 14px;
+    line-height: 19px;
+    color: $text;
+    padding: 9px 0 12px 35px;
+    display: block;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 14px;
+      left: 15px;
+      width: 10px;
+      height: 10px;
+      background-color: $green;
+      border-radius: 50%;
+    }
+  }
+
+  &__list-link--active {
+    background-color: #F6F8FC;
+  }
+
+  &__list-link--blue {
+    &::before {
+      background-color: #03A9F4;
+    }
+  }
+
+  &__list-btn {
+    @extend %Regular;
+    font-size: 12px;
+    line-height: 16px;
+    color: #B7B9BB;
+    padding-left: 13px;
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+  }
+
+  &__list-icon {
+    margin-left: 8px;
+  }
+
+  &__teams-link {
+    &::before {
+      background-image: url('../img/arrow-right.svg');
+      background-color: transparent;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 6px;
+      height: 8px;
+    }
+  }
+}
+
+.board {
+
+  &__inner {
+    display: flex;
+  }
+
+  &__content {
+    padding: 11px 0 0 20px;
+    flex-grow: 1;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__top-text {
+    display: flex;
+    align-items: center;
+    margin-bottom: 7px;
+  }
+
+  &__top-name {
+    @extend %Bold;
+    font-size: 18px;
+    line-height: 25px;
+    margin-right: 14px;
+    color: $text;
+  }
+
+  &__top-status {
+    @extend %Regular;
+    font-size: 12px;
+    line-height: 16px;
+    color: $text;
+    position: relative;
+    padding-left: 15px;
+
+    &::before {
+      position: absolute;
+      content: '';
+      width: 7px;
+      height: 7px;
+      background-color: $green;
+      border-radius: 50%;
+      top: 3px;
+      left: 0;
+    }
+  }
+
+  &__top-btn {
+    @extend %SemiBold;
+    font-size: 14px;
+    line-height: 19px;
+    color: #B7B9BB;
+    padding-bottom: 14px;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: '';
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background-color: transparent;
+    }
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__top-btn--active {
+    color: $blue;
+
+    &::before {
+      background-color: $blue;
+    }
+  }
+
+  &__top-right {
+    display: flex;
+    align-items: center;
+    padding-right: 15px;
+  }
+
+  &__top-link {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    position: relative;
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+
+    &:nth-child(3) {
+      margin-right: 15px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        background-color: $orange;
+      }
+    }
+  }
+
+  &__wrapper {
+    background-color: #ffffff;
+    padding: 10px 0 0 20px;
+    border-radius: 10px 0px 0px 0px;
+  }
+
+  &__wrapper-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 11px;
+    border-bottom: 1px solid #F2F5FA;
+  }
+
+  &__wrapper-text {
+    @extend %Regular;
+    font-size: 14px;
+    line-height: 19px;
+    color: #808080;
+  }
+
+  &__wrapper-box {
+    @extend %Regular;
+    font-size: 14px;
+    line-height: 27px;
+    margin-right: 26px;
+  }
+
+  &__wrapper-btn {
+    color: #808080;
+    padding-left: 21px;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 9px;
+      left: 0;
+      width: 10px;
+      height: 10px;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    &:nth-child(1) {
+      margin-right: 33px;
+
+      &::before {
+        background-image: url('../img/filter.svg');
+      }
+    }
+
+    &:nth-child(2) {
+
+      &::before {
+        background-image: url('../img/sort.svg');
+      }
+    }
+  }
+
+  &__columns {
+    display: flex;
+    margin-right: 15px;
+  }
+
+  &__column {
+    max-width: 310px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0px 0px;
+    background-color: #F2F5FA;
+    padding: 13px 15px 0 15px;
+
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+  }
+
+  &__column-added {
+    background-color: #ffffff;
+  }
+
+  &__column-added-btn {
+    opacity: 0.5;
+    @extend %SemiBold;
+    font-size: 16px;
+    line-height: 22px;
+    color: #333333;
+    display: flex;
+    align-items: center;
+
+    svg {
+      margin-right: 10px;
+    }
+  }
+
+  &__column-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__column-name {
+    @extend %SemiBold;
+    font-size: 16px;
+    line-height: 22px;
+    color: $text;
+  }
+
+  &__column-buttons {
+    display: flex;
+    align-items: center;
+  }
+
+  &__column-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-right: 5px;
+    }
+  }
+
+  &__item {
+    padding: 15px;
+    box-shadow: 0px 2px 4px rgba(21, 27, 38, 0.2);
+    border-radius: 10px;
+    background-color: #ffffff;
+    margin-bottom: 15px;
+    transition: all .3s ease;
+
+    &:hover {
+      .board__start-btn {
+        opacity: 1;
+        display: block;
+      }
+
+      .board__start-branch {
+        right: 20px;
+      }
+    }
+  }
+
+  &__item--disable {
+    .board__item-box {
+      opacity: 0.5;
+    }
+  }
+
+  &__item-box {
+    display: flex;
+    align-items: start;
+    margin-bottom: 15px;
+  }
+
+  &__item-check {
+    margin-top: 3px;
+
+
+  }
+
+  &__item-check--active {
+    svg {
+      fill: #8BC34A;
+      stroke: #ffffff;
+    }
+
+    path {
+      stroke: #ffffff;
+    }
+  }
+
+  &__item-name {
+    display: block;
+    @extend %Regular;
+    font-size: 14px;
+    line-height: 22px;
+    color: $text;
+    margin: 0 15px 0 10px;
+  }
+
+  &__item-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    height: 12px;
+    margin-top: 14px;
+
+    span {
+      width: 17px;
+      height: 1px;
+      background-color: #B7B9BB;
+    }
+  }
+
+  &__item-input {
+    border: none;
+    background-color: transparent;
+    color: $text;
+    @extend %Regular;
+    font-size: 14px;
+    line-height: 22px;
+    outline: transparent;
+    width: 100%;
+    margin-bottom: 10px;
+
+
+    &::placeholder {
+      color: #E5E5E5;
+
+    }
+  }
+
+  &__item-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__item-date {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+
+  &__time {
+    @extend %SemiBold;
+    font-size: 12px;
+    line-height: 15px;
+    color: #B7B9BB;
+  }
+
+  &__time-start {
+    display: block;
+  }
+
+  &__time-end--orange {
+    color: $orange;
+    display: block;
+  }
+
+  &__start {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  &__start-branch {
+    position: absolute;
+    right: 0;
+    @extend %Regular;
+    font-size: 12px;
+    line-height: 16px;
+    color: #B7B9BB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 41px;
+    margin-right: 8px;
+    transition: all .5s ease;
+
+    svg {
+      margin-left: 5px;
+    }
+  }
+
+  &__start-branch--active {
+    background-color: $bg;
+    border-radius: 10px;
+  }
+
+  &__start-branch--start {
+    right: 20px;
+  }
+
+  &__start-btn {
+    opacity: 0;
+    transition: all .3s ease;
+  }
+
+  &__start-btn--active {
+    opacity: 1;
+    display: block;
+  }
+
+  &__start-btn-icon--none {
+    display: none;
+  }
+
+  &__tasks {
+    margin-top: 20px;
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    transition: all .3s ease;
+  }
+
+  &__tasks--active {
+    transition: all .3s ease;
+    height: auto;
+    opacity: 1;
+  }
+
+  &__items {
+    display: none;
+
+  }
+
+  &__items--active {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0 8px;
+  }
+
+  &__task--first {
+    padding: 7px 0 9px;
+    border-top: 1px solid #F1F1F1;
+    border-bottom: 1px solid #F1F1F1;
+  }
+
+  &__task-new {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4px 0 14px 0;
+  }
+
+  &__task-new-input {
+    width: 190px;
+    @extend %Regular;
+    font-size: 14px;
+    line-height: 22px;
+    color: $text;
+    border: none;
+    outline: transparent;
+
+    &::placeholder {
+      color: #E5E5E5;
+    }
+  }
+
+  &__task-new-buttons {
+    display: flex;
+    align-items: center;
+  }
+
+  &__task-new-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    border: 1px dashed #96999C;
+    border-radius: 50px;
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+
+  &__task-name {
+    flex-grow: 1;
+    @extend %Regular;
+    font-size: 14px;
+    line-height: 22px;
+    color: $text;
+    display: block;
+    margin-left: 10px;
+  }
+
+  &__task-img {
+    width: 24px;
+    height: 24px;
+    object-fit: cover;
+  }
+
+  &__task-add {
+    @extend %Regular;
+    font-size: 12px;
+    line-height: 20px;
+    color: #808080;
+    margin-top: 5px;
+  }
+
+  &__item-name--new {
+    color: #E5E5E5;
+  }
+}
